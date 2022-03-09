@@ -3,11 +3,13 @@
 #include "Matrix.h"
 #include "Timer.h"
 #include "OutManager.h"
+#include "Clock.h"
 #include <LinkedList.h>
 
 Button* plus;
 Button* minus;
 Timer* timer;
+Clock* clok;
 OutManager* outManager;
 
 LinkedList<LedSimple*>* leds;
@@ -30,11 +32,14 @@ void setup() {
   plus = new Button(3);
   minus = new Button(2);
 
-  timer = new Timer(5000,plus,minus,outManager);
+  clok = new Clock(8,9);
+
+  timer = new Timer(5000,plus,minus,outManager,clok);
   
   timer->execStart();
   plus->execStart();
   minus->execStart();
+  clok->execStart();
   outManager->execStart();
 }
 
@@ -48,5 +53,6 @@ void loop() {
   timer->exec();
   plus->exec();
   minus->exec();
+  clok->exec();
   outManager->exec();
 }
