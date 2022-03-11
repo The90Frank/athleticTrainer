@@ -7,7 +7,7 @@ void OutManager::exec(){
     if (currentMillis > previousMillis + interval) {
       previousMillis = currentMillis;
       task();
-    } else if (currentMillis > previousMillis + (interval-(interval/8))) { //(interval-1000) se si vuole un black fisso di 1 secondo
+    } else if (currentMillis > previousMillis + (interval-50)) { //(interval-1000) se si vuole un black fisso di 1 secondo
       closeAll();
     } 
   }  

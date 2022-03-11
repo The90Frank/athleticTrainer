@@ -14,8 +14,9 @@ void Clock::taskShutdown(){
 
 Clock::Clock(uint32_t clk, uint32_t dio){
   tm = new TM1637(clk,dio);
-  tm -> set(2);
-  tm->init();
+  tm -> set(0);
+  tm -> point(0);
+  tm -> init();
   setNumber(0);
   setInterval(10);
   init();
