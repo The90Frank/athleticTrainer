@@ -34,7 +34,7 @@ void setup() {
 
   clok = new Clock(8,9);
 
-  timer = new Timer(5000,plus,minus,outManager,clok);
+  timer = new Timer(1000,plus,minus,outManager,clok);
   
   timer->execStart();
   plus->execStart();

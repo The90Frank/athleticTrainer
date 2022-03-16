@@ -49,11 +49,12 @@ OutManager::OutManager(LinkedList<LedSimple*>* _leds, LinkedList<Matrix*>* _matr
   leds=_leds;
   images = new LinkedList<byte*>();
   
-  images->add(new byte[8] IMAGE_FA);
-  images->add(new byte[8] IMAGE_FB);
+  //images->add(new byte[8] IMAGE_FA);
+  //images->add(new byte[8] IMAGE_FB);
   images->add(new byte[8] IMAGE_FC);
   images->add(new byte[8] IMAGE_FD);
   images->add(new byte[8] IMAGE_FE);
+  images->add(new byte[8] IMAGE_FF);
   
   setInterval(100);
   init();
